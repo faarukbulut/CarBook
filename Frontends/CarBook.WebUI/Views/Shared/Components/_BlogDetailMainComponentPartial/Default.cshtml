@@ -8,7 +8,7 @@
     </p>
 
 
-    @await Component.InvokeAsync("_BlogDetailMainTagCloudComponentPartial")
+    @await Component.InvokeAsync("_BlogDetailMainTagCloudComponentPartial", new {id = ViewBag.BlogId})
     @await Component.InvokeAsync("_BlogDetailAuthorAboutComponentPartial")
 
     <div class="pt-5 mt-5">

@@ -15,7 +15,7 @@
                 @await Component.InvokeAsync("_BlogDetailSideBarSearchBoxComponentPartial")
                 @await Component.InvokeAsync("_BlogDetailCategoryComponentPartial")
                 @await Component.InvokeAsync("_BlogDetailRecentBlogsComponentPartial")
-                @await Component.InvokeAsync("_BlogDetailTagCloudComponentPartial")
+                @await Component.InvokeAsync("_BlogDetailTagCloudComponentPartial", new {id = ViewBag.BlogId})
                 @await Component.InvokeAsync("_BlogDetailParagraphComponentPartial")
             </div>
 
