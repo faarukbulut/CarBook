@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_DefaultLayout.cshtml";
 }
 
+@await Component.InvokeAsync("_MainDefaultLayoutComponentPartial", new { p = "Hakkımızda"})
 @await Component.InvokeAsync("_AboutUsComponentPartial")
 @await Component.InvokeAsync("_BecomeADriverComponentPartial")
 @await Component.InvokeAsync("_AboutTestimonialComponentPartial")
