@@ -6,7 +6,7 @@ using MediatR;
 
 namespace CarBook.Application.Features.Mediator.Handlers.TestimonialHandlers
 {
-	internal class GetTestimonialByIdQueryHandler : IRequestHandler<GetTestimonialByIdQuery, GetTestimonialByIdQueryResult>
+	public class GetTestimonialByIdQueryHandler : IRequestHandler<GetTestimonialByIdQuery, GetTestimonialByIdQueryResult>
 	{
 		private readonly IRepository<Testimonial> _repository;
 
