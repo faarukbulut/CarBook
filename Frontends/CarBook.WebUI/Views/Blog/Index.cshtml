@@ -13,15 +13,14 @@
             {
                 <div class="col-md-3 d-flex ftco-animate">
                     <div class="blog-entry justify-content-end">
-                        <a href="blog-single.html" class="block-20" style="background-image: url('/carbook-master/images/@item.CoverImageUrl');">
-                        </a>
+                        <img class="block-20" src="~/carbook-master/images/@item.CoverImageUrl" >
                         <div class="text pt-4">
                             <div class="meta mb-3">
-                                <div><a href="#">@item.CreatedDate.ToShortDateString()</a></div>
-                                <div><a href="#">@item.AuthorName</a></div>
-                                <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 0</a></div>
+                                <div>@item.CreatedDate.ToShortDateString()</div>
+                                <div>@item.AuthorName</div>
+                                <div><span class="icon-chat"></span> 0</div>
                             </div>
-                            <h3 class="heading mt-2"><a href="#">@item.Title</a></h3>
+                            <h3 class="heading mt-2"><a href="/Blog/BlogDetail/@item.BlogID">@item.Title</a></h3>
                         </div>
                     </div>
                 </div>
