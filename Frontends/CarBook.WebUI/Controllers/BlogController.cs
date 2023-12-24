@@ -31,6 +31,7 @@ namespace CarBook.WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> BlogDetail(int id)
         {
+            ViewBag.BlogId = id;
             return View();
         }
     }
