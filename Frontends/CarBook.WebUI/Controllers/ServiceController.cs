@@ -1,27 +1,28 @@
 ﻿using CarBook.Dto.AboutDtos;
+using CarBook.Dto.ServiceDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace CarBook.WebUI.ViewComponents.AboutViewComponents
+namespace CarBook.WebUI.Controllers
 {
-    public class _AboutUsComponentPartial : ViewComponent
+    public class ServiceController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public _AboutUsComponentPartial(IHttpClientFactory httpClientFactor)
+        public ServiceController(IHttpClientFactory httpClientFactory)
         {
-            _httpClientFactory = httpClientFactor;
+            _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44358/api/Abouts");
+            var responseMessage = await client.GetAsync("https://localhost:44358/api/Services");
 
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultAbutDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultServiceDto>>(jsonData);
                 return View(values);
             }
 
