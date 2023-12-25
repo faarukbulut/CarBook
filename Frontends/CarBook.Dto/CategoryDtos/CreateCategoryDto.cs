@@ -1,8 +1,7 @@
 ﻿namespace CarBook.Dto.CategoryDtos
 {
-    public class ResultCategoryDto
+    public class CreateCategoryDto
     {
-        public int CategoryID { get; set; }
         public string Name { get; set; }
     }
 }

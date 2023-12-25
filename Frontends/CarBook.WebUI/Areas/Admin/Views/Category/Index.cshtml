@@ -1,0 +1,38 @@
+﻿@model List<ResultCategoryDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Kategori Listesi</h4>
+            <div class="table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Kategori Adı</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
+                            <th>Bloglar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td><a href="/Admin/Category/RemoveCategory/@item.CategoryID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/Admin/Category/UpdateCategory/@item.CategoryID" class="btn btn-outline-dark">Düzenle</a></td>
+                                <td><a href="/Admin/Category/UpdateCategory/@item.CategoryID" class="btn btn-outline-success">Bloglar</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="/Admin/Category/CreateCategory" class="btn btn-outline-secondary">Yeni Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+
