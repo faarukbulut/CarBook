@@ -21,7 +21,14 @@ namespace CarBook.Persistence.Repositories.CommentRepositories
 
         public List<Comment> GetAll()
         {
-            return _context.Comments.ToList();
+            return _context.Comments.Select(x => new Comment
+            {
+                BlogID = x.BlogID,
+                CommentID= x.CommentID,
+                CreatedDate= x.CreatedDate,
+                Description= x.Description,
+                Name= x.Name,
+            }).ToList();
         }
 
         public Comment GetById(int id)
@@ -29,9 +36,10 @@ namespace CarBook.Persistence.Repositories.CommentRepositories
             return _context.Comments.Find(id);
         }
 
-        public void Remove(Comment entity)
+        public void Remove(int id)
         {
-            _context.Remove(entity);
+            var value = _context.Comments.Find(id);
+            _context.Remove(value);
             _context.SaveChanges();
         }
 

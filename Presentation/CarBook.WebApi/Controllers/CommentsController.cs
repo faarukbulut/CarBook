@@ -21,5 +21,33 @@ namespace CarBook.WebApi.Controllers
             var values = _commentRepository.GetAll();
             return Ok(values);
         }
+
+        [HttpPost]
+        public IActionResult CreateComment(Comment comment)
+        {
+            _commentRepository.Create(comment);
+            return Ok("Başarıyla Eklendi");
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteComment(int id)
+        {
+            _commentRepository.Remove(id);
+            return Ok("Başarıyla Silindi");
+        }
+
+        [HttpPut]
+        public IActionResult UpdateComment(Comment comment)
+        {
+            _commentRepository.Update(comment);
+            return Ok("Başarıyla Düzenlendi");
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetComment(int id)
+        {
+            var value = _commentRepository.GetById(id);
+            return Ok(value);
+        }
     }
 }
