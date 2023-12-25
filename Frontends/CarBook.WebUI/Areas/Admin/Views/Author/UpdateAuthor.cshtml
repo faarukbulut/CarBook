@@ -1,0 +1,34 @@
+﻿@model UpdateAuthorDto
+@{
+    ViewData["Title"] = "UpdateAuthor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yazar Düzenle</h4>
+            <form method="post">
+                @Html.HiddenFor(x => x.AuthorID)
+
+                <div class="form-group">
+                    <label>Ad Soyad</label>
+                    <input type="text" class="form-control" asp-for="Name">
+                </div>
+
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <input type="text" class="form-control" asp-for="Description">
+                </div>
+
+                <div class="form-group">
+                    <label>Resim Ad</label>
+                    <input type="text" class="form-control" asp-for="ImageUrl">
+                </div>
+
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Düzenle</button>
+            </form>
+
+        </div>
+    </div>
+</div>
