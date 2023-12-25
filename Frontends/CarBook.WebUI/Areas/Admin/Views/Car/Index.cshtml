@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
@@ -22,22 +23,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach(var item in Model)
+                        @foreach (var item in Model)
                         {
                             <tr>
                                 <td>@item.BrandName</td>
                                 <td>@item.Model</td>
                                 <td>@item.Transmission</td>
                                 <td>@item.Km</td>
-                                <td><a href="/AdminCar/RemoveCar/@item.CarID" class="btn btn-outline-danger">Sil</a></td>
-                                <td><a href="/AdminCar/UpdateCar/@item.CarID" class="btn btn-outline-dark">Düzenle</a></td>
+                                <td><a href="/Admin/Car/RemoveCar/@item.CarID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/Admin/Car/UpdateCar/@item.CarID" class="btn btn-outline-dark">Düzenle</a></td>
                                 <td><a href="#" class="btn btn-outline-success">Detaylar</a></td>
                             </tr>
                         }
                     </tbody>
                 </table>
-                <a href="/AdminCar/CreateCar" class="btn btn-outline-secondary">Yeni Ekle</a>
+                <a href="/Admin/Car/CreateCar" class="btn btn-outline-secondary">Yeni Ekle</a>
             </div>
         </div>
     </div>
 </div>
+

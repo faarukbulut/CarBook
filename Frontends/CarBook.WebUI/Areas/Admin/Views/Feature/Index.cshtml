@@ -20,18 +20,17 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <td>@item.Name</td>
-                                <td><a href="/AdminFeature/RemoveFeature/@item.FeatureID" class="btn btn-outline-danger">Sil</a></td>
-                                <td><a href="/AdminFeature/UpdateFeature/@item.FeatureID" class="btn btn-outline-dark">Düzenle</a></td>
-                            </tr>
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td><a href="/Admin/Feature/RemoveFeature/@item.FeatureID" class="btn btn-outline-danger">Sil</a></td>
+                                    <td><a href="/Admin/Feature/UpdateFeature/@item.FeatureID" class="btn btn-outline-dark">Düzenle</a></td>
+                                </tr>
                         }
                     </tbody>
                 </table>
-                <a href="/AdminFeature/CreateFeature" class="btn btn-outline-secondary">Yeni Ekle</a>
+                <a href="/Admin/Feature/CreateFeature" class="btn btn-outline-secondary">Yeni Ekle</a>
             </div>
         </div>
     </div>
 </div>
-
 

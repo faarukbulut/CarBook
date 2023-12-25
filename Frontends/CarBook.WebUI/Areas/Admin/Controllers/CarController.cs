@@ -5,13 +5,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using System.Text;
 
-namespace CarBook.WebUI.Controllers
+namespace CarBook.WebUI.Areas.Admin.Controllers
 {
-    public class AdminCarController : Controller
+    [Area("Admin")]
+    public class CarController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public AdminCarController(IHttpClientFactory httpClientFactory)
+        public CarController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
