@@ -1,0 +1,22 @@
+﻿@model CreateBrandDto
+@{
+    ViewData["Title"] = "CreateBrand";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Araba Marka Ekle</h4>
+            <form method="post">
+                <div class="form-group">
+                    <label>Marka</label>
+                    <input type="text" class="form-control" asp-for="Name">
+                </div>
+
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Ekle</button>
+            </form>
+
+        </div>
+    </div>
+</div>
