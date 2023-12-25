@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    @await Component.InvokeAsync("_HeadAdminLayoutComponentPartial")
+<body>
+    <div id="layout-wrapper">
+        @await Component.InvokeAsync("_NavbarAdminLayoutComponentPartial")
+        @await Component.InvokeAsync("_SidebarAdminLayoutComponentPartial")
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+            <footer class="footer">@DateTime.Now.Year © CarBook - Tüm Hakları Saklıdır.</footer>
+        </div>
+    </div>
+    <div class="menu-overlay"></div>
+    @await Component.InvokeAsync("_ScriptAdminLayoutComponentPartial")
+</body>
+</html>
