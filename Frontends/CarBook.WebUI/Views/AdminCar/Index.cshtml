@@ -1,10 +1,43 @@
-﻿
+﻿@model List<ResultCarWithBrandDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="page-title-box d-flex align-items-center justify-content-between">
-    <h4 class="mb-0 font-size-18">Starter</h4>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Araba Listesi</h4>
+            <div class="table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Marka</th>
+                            <th>Model</th>
+                            <th>Vites Türü</th>
+                            <th>Km</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
+                            <th>Detaylar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            <tr>
+                                <td>@item.BrandName</td>
+                                <td>@item.Model</td>
+                                <td>@item.Transmission</td>
+                                <td>@item.Km</td>
+                                <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="#" class="btn btn-outline-dark">Düzenle</a></td>
+                                <td><a href="#" class="btn btn-outline-success">Detaylar</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="/AdminCar/CreateCar" class="btn btn-outline-secondary">Yeni Ekle</a>
+            </div>
+        </div>
+    </div>
 </div>
-

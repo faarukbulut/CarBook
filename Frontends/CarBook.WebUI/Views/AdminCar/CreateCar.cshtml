@@ -1,0 +1,65 @@
+﻿@model CreateCarDto
+@{
+    ViewData["Title"] = "CreateCar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Araba Ekle</h4>
+            <form method="post">
+                <div class="form-group">
+                    <label>Marka</label>
+                    @Html.DropDownListFor(x => x.BrandID, (List<SelectListItem>)ViewBag.bv, new {@class = "form-control"})
+                </div>
+
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" class="form-control" asp-for="Model">
+                </div>
+
+                <div class="form-group">
+                    <label>CoverImageUrl</label>
+                    <input type="text" class="form-control" asp-for="CoverImageUrl">
+                </div>
+
+                <div class="form-group">
+                    <label>Km</label>
+                    <input type="text" class="form-control" asp-for="Km">
+                </div>
+
+                <div class="form-group">
+                    <label>Transmission</label>
+                    <input type="text" class="form-control" asp-for="Transmission">
+                </div>
+
+                <div class="form-group">
+                    <label>Seat</label>
+                    <input type="text" class="form-control" asp-for="Seat">
+                </div>
+
+                <div class="form-group">
+                    <label>Luggage</label>
+                    <input type="text" class="form-control" asp-for="Luggage">
+                </div>
+
+                <div class="form-group">
+                    <label>Fuel</label>
+                    <input type="text" class="form-control" asp-for="Fuel">
+                </div>
+
+                <div class="form-group">
+                    <label>BigImageUrl</label>
+                    <input type="text" class="form-control" asp-for="BigImageUrl">
+                </div>
+
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Ekle</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+

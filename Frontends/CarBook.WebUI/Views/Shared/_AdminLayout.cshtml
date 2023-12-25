@@ -11,9 +11,7 @@
         @await Component.InvokeAsync("_SidebarAdminLayoutComponentPartial")
         <div class="main-content">
             <div class="page-content">
-                <div class="container-fluid">
-                    @RenderBody()
-                </div>
+                @RenderBody()
             </div>
             <footer class="footer">@DateTime.Now.Year © CarBook - Tüm Hakları Saklıdır.</footer>
         </div>
