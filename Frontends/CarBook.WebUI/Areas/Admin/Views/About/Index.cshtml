@@ -1,0 +1,39 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkımızda Listesi</h4>
+            <div class="table-responsive">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Başlık</th>
+                            <th>Açıklama</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Title</td>
+                                <td>@item.Description</td>
+                                <td><a href="/Admin/About/RemoveAbout/@item.AboutID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/Admin/About/UpdateAbout/@item.AboutID" class="btn btn-outline-dark">Düzenle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="/Admin/About/CreateAbout" class="btn btn-outline-secondary">Yeni Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
