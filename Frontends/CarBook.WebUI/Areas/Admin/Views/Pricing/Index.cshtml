@@ -1,0 +1,40 @@
+﻿@model List<ResultPricingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Ödeme Türleri Alanı</h4>
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Periyot Adı</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td><a href="/Admin/Pricing/RemovePricing/@item.PricingID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Admin/Pricing/UpdatePricing/@item.PricingID" class="btn btn-outline-success">Güncelle</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Admin/Pricing/CreatePricing" class="btn btn-outline-primary">Yeni Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
