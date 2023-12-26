@@ -76,5 +76,6 @@ namespace CarBook.WebApi.Controllers
             var values = _getCarLast5WithBrandQueryHandler.Handle();
             return Ok(values);
         }
+
     }
 }
