@@ -17,7 +17,7 @@ namespace CarBook.WebUI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:44358/api/Locations");
@@ -31,7 +31,7 @@ namespace CarBook.WebUI.Controllers
                                                        Value = x.LocationID.ToString(),
                                                    }).ToList();
             ViewBag.lv = locationValues;
-
+            ViewBag.id = id;
 
             return View();
         }
