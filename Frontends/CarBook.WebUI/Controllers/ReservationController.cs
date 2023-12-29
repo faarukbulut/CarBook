@@ -39,6 +39,8 @@ namespace CarBook.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(CreateReservationDto createReservationDto)
         {
+
+
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(createReservationDto);
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
