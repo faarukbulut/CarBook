@@ -1,4 +1,4 @@
-﻿@model ResultLocationDto
+﻿@model CreateReservationDto
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_DefaultLayout.cshtml";
@@ -12,43 +12,43 @@
             <form method="post" class="bg-light p-5 contact-form">
                 <div class="form-group">
                     <label>Almak İstediğiniz Araba</label>
-                    <input type="text" class="form-control" readonly>
+                    <input type="text" class="form-control" asp-for="CarID" >
                 </div>
                 <div class="form-group">
                     <label>Almak İstediğiniz Lokasyon</label>
-                    <input type="text" class="form-control" readonly>
+                    <input type="text" class="form-control" asp-for="PickUpLocationID" >
                 </div>
                 <div class="form-group">
                     <label>Teslim Etmek İstediğiniz Lokasyon</label>
-                    @Html.DropDownListFor(x=>x.LocationID,(List<SelectListItem>)ViewBag.lv,new {@class="form-control"} )
+                    @Html.DropDownListFor(x=>x.DropOffLocationID,(List<SelectListItem>)ViewBag.lv,new {@class="form-control"} )
                 </div>
                 <div class="form-group">
                     <label>Ad</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" class="form-control" asp-for="Name">
                 </div>
                 <div class="form-group">
                     <label>Soyad</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" asp-for="Surname">
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control">
+                    <input type="email" class="form-control" asp-for="Email">
                 </div>
                 <div class="form-group">
                     <label>Telefon</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" asp-for="Phone">
                 </div>
                 <div class="form-group">
                     <label>Yaş</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" asp-for="Age">
                 </div>
                 <div class="form-group">
                     <label>Ehliyet Yılınız</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" asp-for="DriverLicenseYear">
                 </div>
                 <div class="form-group">
                     <label>Eklemek İstedikleriniz...</label>
-                    <textarea cols="30" rows="7" class="form-control"></textarea>
+                    <textarea cols="30" rows="7" class="form-control" asp-for="Description"></textarea>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Tamamla" class="btn btn-primary py-3 px-5">
@@ -57,4 +57,3 @@
         </div>
     </div>
 </section>
-

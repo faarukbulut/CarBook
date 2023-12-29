@@ -10,6 +10,7 @@
         public int? PickUpLocationID { get; set; }
         public int? DropOffLocationID { get; set; }
         public int CarID { get; set; }
+        public Car Car { get; set; }
         public int Age { get; set; }
         public int DriverLicenseYear { get; set; }
         public string? Description { get; set; }
