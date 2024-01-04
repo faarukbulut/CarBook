@@ -8,5 +8,6 @@
 		}
 		public string Model { get; set; }
 		public List<Decimal> Amounts { get; set; }
+		public string CoverImageUrl { get; set; }
 	}
 }
