@@ -8,5 +8,6 @@
         void Remove(int id);
         T GetById(int id);
         List<T> GetCommentByBlogId(int id);
+        int GetCommentCountByBlogId(int id);
     }
 }
