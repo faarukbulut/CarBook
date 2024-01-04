@@ -13,7 +13,7 @@
 
     <div class="pt-5 mt-5">
         @await Component.InvokeAsync("_BlogDetailCommentsComponentPartial", new {id = ViewBag.BlogId})
-        @await Component.InvokeAsync("_BlogDetailAddCommentComponentPartial")
+        @await Component.InvokeAsync("_BlogDetailAddCommentComponentPartial", new {id = ViewBag.BlogId})
     </div>
 
 </div>

@@ -1,13 +1,13 @@
-﻿namespace CarBook.Domain.Entities
+﻿using MediatR;
+
+namespace CarBook.Application.Features.Mediator.Commands.CommentCommands
 {
-    public class Comment
+    public class CreateCommentCommand : IRequest
     {
-        public int CommentID { get; set; }
         public string Name { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Description { get; set; }
         public int BlogID { get; set; }
-        public Blog Blog { get; set; }
         public string Email { get; set; }
     }
 }
