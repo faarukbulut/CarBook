@@ -24,6 +24,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.CarPricingHandlers
 				WeeklyAmount = x.Amounts[2],
 				Model = x.Model,
 				CoverImageUrl = x.CoverImageUrl,
+				BrandName = x.BrandName
 			}).ToList();
 		}
 	}

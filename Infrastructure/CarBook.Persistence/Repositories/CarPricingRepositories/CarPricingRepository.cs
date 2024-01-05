@@ -31,7 +31,7 @@ namespace CarBook.Persistence.Repositories.CarPricingRepositories
 			List<CarPricingViewModel> values = new List<CarPricingViewModel>();
 			using (var command = _context.Database.GetDbConnection().CreateCommand())
 			{
-				command.CommandText = "Select * From (Select Model,CoverImageUrl,PricingID,Amount From CarPricings Inner Join Cars On Cars.CarID=CarPricings.CarId Inner Join Brands On Brands.BrandID=Cars.BrandID) As SourceTable Pivot (Sum(Amount) For PricingID In ([2],[3],[4])) as PivotTable;";
+				command.CommandText = "Select * From (Select Model,Name,CoverImageUrl,PricingID,Amount From CarPricings Inner Join Cars On Cars.CarID=CarPricings.CarId Inner Join Brands On Brands.BrandID=Cars.BrandID) As SourceTable Pivot (Sum(Amount) For PricingID In ([2],[3],[4])) as PivotTable;";
 				command.CommandType = System.Data.CommandType.Text;
 				_context.Database.OpenConnection();
 				using (var reader = command.ExecuteReader())
@@ -40,13 +40,14 @@ namespace CarBook.Persistence.Repositories.CarPricingRepositories
 					{
 						CarPricingViewModel carPricingViewModel = new CarPricingViewModel()
 						{
+							BrandName = reader["Name"].ToString(),
 							Model = reader["Model"].ToString(),
 							CoverImageUrl = reader["CoverImageUrl"].ToString(),
 							Amounts = new List<decimal>
 							{
-								Convert.ToDecimal(reader[2]),
-								Convert.ToDecimal(reader[3]),
-								Convert.ToDecimal(reader[4])
+								Convert.ToDecimal(reader["2"]),
+								Convert.ToDecimal(reader["3"]),
+								Convert.ToDecimal(reader["4"])
 							}
 						};
 						values.Add(carPricingViewModel);

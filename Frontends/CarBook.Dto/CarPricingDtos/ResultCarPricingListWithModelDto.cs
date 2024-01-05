@@ -7,5 +7,6 @@
 		public decimal DailyAmount { get; set; }
 		public decimal WeeklyAmount { get; set; }
 		public string CoverImageUrl { get; set; }
+		public string BrandName { get; set; }
 	}
 }
