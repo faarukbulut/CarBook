@@ -1,0 +1,28 @@
+﻿@model List<ResultFeatureDto>
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Araba Özellik Ekleme</h4>
+
+            <form method="post">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                        <div class="form-check mb-3">
+                            <input type="hidden" asp-for="@Model[i].FeatureID" />
+                            <input type="hidden" asp-for="@Model[i].Name" />
+                            <input type="checkbox" class="form-check-input" />
+                            <label class="form-check-label">@Model[i].Name</label>
+                        </div>
+                }
+
+                <button class="btn btn-primary">Özellik Ekle</button>
+            </form>
+        </div>
+    </div>
+</div>
+

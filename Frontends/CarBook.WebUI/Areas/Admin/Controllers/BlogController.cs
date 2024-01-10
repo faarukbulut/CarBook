@@ -1,11 +1,6 @@
-﻿using CarBook.Dto.AuthorDtos;
-using CarBook.Dto.BlogDtos;
-using CarBook.Dto.BrandDtos;
-using CarBook.Dto.CategoryDtos;
+﻿using CarBook.Dto.BlogDtos;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
-using System.Text;
 
 namespace CarBook.WebUI.Areas.Admin.Controllers
 {
