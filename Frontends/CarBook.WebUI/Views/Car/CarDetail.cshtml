@@ -19,7 +19,7 @@
 					<div class="tab-content" id="pills-tabContent">
 						@await Component.InvokeAsync("_CarDetailCarFeatureByCarIDComponentPartial", new {id = ViewBag.id})
 						@await Component.InvokeAsync("_CarDetailDescriptionComponentPartial", new {id = ViewBag.id})
-						@await Component.InvokeAsync("_CarDetailCommentByCarIDComponentPartial")
+						@await Component.InvokeAsync("_CarDetailCommentByCarIDComponentPartial", new {id = ViewBag.id})
 					</div>
 				</div>
 			</div>
