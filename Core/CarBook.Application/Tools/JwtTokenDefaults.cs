@@ -5,6 +5,6 @@
 		public const string ValidAudience = "https://localhost";
 		public const string ValidIssuer = "https://localhost";
 		public const string IssuerSigningKey = "carbookcarbook01";
-		public const string Expire = 3;
+		public const int Expire = 3;
 	}
 }
