@@ -1,4 +1,5 @@
-﻿using CarBook.Application.Features.Mediator.Commands.AppUserCommands;
+﻿using CarBook.Application.Enums;
+using CarBook.Application.Features.Mediator.Commands.AppUserCommands;
 using CarBook.Application.Interfaces;
 using CarBook.Domain.Entities;
 using MediatR;
@@ -20,7 +21,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.AppUserHandlers
 			{
 				Username = request.Username,
 				Password = request.Password,
-				AppRoleID = 2,
+				AppRoleID = (int)RolesType.Member,
 			});
 		}
 	}
