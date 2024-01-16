@@ -1,4 +1,4 @@
-﻿@model AppUserRegisterDto
+﻿@model AppUserLoginDto
 @{
     Layout = null;
 }
@@ -37,20 +37,9 @@
                                                 </b>
                                             </a>
                                         </div>
-                                        <h1 class="h5 mb-1">Kayıt Ol</h1>
-                                        <p class="text-muted mb-4">Henüz hesabınız yok mu? Hemen oluşturun</p>
+                                        <h1 class="h5 mb-1">Giriş Yap</h1>
+                                        <p class="text-muted mb-4">Kullanıcı bilgilerinizi girerek giriş yapabilirsiniz.</p>
                                         <form method="post" class="user">
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                                    <input type="text" class="form-control" placeholder="Adınız" asp-for="Name">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control" placeholder="Soyadınız" asp-for="Surname">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="E-Posta" asp-for="Email">
-                                            </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                                     <input type="text" class="form-control" placeholder="Kullanıcı Adı" asp-for="Username">
@@ -59,23 +48,23 @@
                                                     <input type="password" class="form-control" placeholder="Şifre" asp-for="Password">
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-success btn-block waves-effect waves-light"> Kayıt Ol </button>
+                                            <button type="submit" class="btn btn-success btn-block waves-effect waves-light"> Giriş Yap </button>
 
                                         </form>
 
                                         <div class="row mt-4">
                                             <div class="col-12 text-center">
-                                                <p class="text-muted mb-0">Zaten hesabınız var mı?  <a href="/Login" class="text-muted font-weight-medium ml-1"><b>Giriş Yap</b></a></p>
-                                            </div> 
+                                                <p class="text-muted mb-0">Henüz bir hesabınız yok mu?  <a href="/Register" class="text-muted font-weight-medium ml-1"><b>Kayıt Ol</b></a></p>
+                                            </div>
                                         </div>
-                                        
-                                    </div> 
-                                </div> 
-                            </div> 
-                        </div> 
-                    </div> 
-                </div> 
-            </div> 
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="~/Admin/assets/js/jquery.min.js"></script>

@@ -1,6 +1,6 @@
-﻿namespace CarBook.Dto.RegisterDtos
+﻿namespace CarBook.Dto.AppUserDtos
 {
-    public class CreateRegisterDto
+    public class AppUserRegisterDto
     {
         public string Username { get; set; }
         public string Password { get; set; }

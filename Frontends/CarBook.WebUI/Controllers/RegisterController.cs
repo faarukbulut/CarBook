@@ -1,5 +1,4 @@
-﻿using CarBook.Dto.ContactDtos;
-using CarBook.Dto.RegisterDtos;
+﻿using CarBook.Dto.AppUserDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
@@ -22,10 +21,10 @@ namespace CarBook.WebUI.Controllers
 		}
 
         [HttpPost]
-        public async Task<IActionResult> Index(CreateRegisterDto createRegisterDto)
+        public async Task<IActionResult> Index(AppUserRegisterDto appUserRegisterDto)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(createRegisterDto);
+            var jsonData = JsonConvert.SerializeObject(appUserRegisterDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("https://localhost:44358/api/Signup", stringContent);
 
